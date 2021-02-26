@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head/>
+    <h:body class="ui-g ui-fluid">
+        <h:form id="frmFiguritas" class="card-w-tittle" style="width: 100%" >
+            <h2 style="padding-left:1em">
+                <p:outputLabel value="NOMBRE DE LA APLICACION: "/>
+                <p:outputLabel value="#{Catalogo.nombreAplicacion}"/>
+            </h2>
+        </h:form>
+    </h:body>
+    <h:form>
+    <div class="card">
+        <p:dataTable var="product" value="#{Catalogo.products}">
+            <p:column headerText="Code">
+                <h:outputText value="#{product.idProducto}" />
+            </p:column>
+
+            <p:column headerText="Name">
+                <h:outputText value="#{product.nombre}" />
+            </p:column>
+
+            <p:column headerText="Cost">
+                <h:outputText value="#{product.precio}" />
+            </p:column>
+
+        </p:dataTable>
+    </div>
+</h:form>
+</html>

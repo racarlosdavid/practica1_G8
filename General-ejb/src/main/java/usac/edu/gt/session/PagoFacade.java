@@ -38,7 +38,13 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     
     @Override
     public double calcularServicio(double cantidad){
-        double total=cantidad+(cantidad*0.1);
+        double total=0;
+        if (cantidad<0){
+            System.out.println("Error, debe ingresar un numero positivo");
+        }else{
+            total=cantidad+(cantidad*0.1);
+        }
+        
         return total;
     } 
     
@@ -46,6 +52,13 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     public double PagoIVA(double dato)
     {
         double iva = dato*0.12;
+        
+        double totalsiva = dato-iva;
+        
+        System.out.println("Precio: " + dato);
+        System.out.println("IVA: " + iva);
+        System.out.println("Total sin IVA:" + totalsiva);
+        
         return iva;
     }
     
@@ -55,20 +68,30 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
         for(Pago pag : lpago){
             subtotal+=pag.getTotal();
         }
+        System.out.println("Total: "+subtotal);
         return subtotal;
     }
-    public double restarCincoPorciento(double cantidad1,double cantidad2){
+    public double restarCincoPorciento(double cantidad1,double cantidad2, double cantidad3){
         double resultado = cantidad1 + cantidad2;
+        resultado = resultado + cantidad3;
         resultado = resultado - (resultado * 0.05);
         return resultado;
     }
     
     @Override
     public double Pago(double recibido, Pago p) {
+        System.out.println("double recibido "+recibido);
+        System.out.println("Total "+p.getTotal());
         return recibido + Pago.getTotal();
     }
     
     public double RestaTotales(Pago pago1,Pago pago2){
-        return pago1.getTotal() - pago2.getTotal();
+        double result= pago1.getTotal() - pago2.getTotal();
+        if(result>0){
+            return result;
+        }else{
+            System.err.println("ERROR: la resta de los totales no fue positivo");
+            return 0;
+        }
     }
 }

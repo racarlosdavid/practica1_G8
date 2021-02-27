@@ -10,6 +10,9 @@ package usac.edu.gt.mgdbean;
 public class Catalogo {
     private String nombreAplicacion;
     
+    @EJB
+    Private CatalogoFacadeLocal catalogoFacadeLocal;
+    
     public void init(){
         nombreAplicacion="Catalogo";
     }

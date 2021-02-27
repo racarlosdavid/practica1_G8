@@ -38,7 +38,13 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     
     @Override
     public double calcularServicio(double cantidad){
-        double total=cantidad+(cantidad*0.1);
+        double total=0;
+        if (cantidad<0){
+            System.out.println("Error, debe ingresar un numero positivo");
+        }else{
+            total=cantidad+(cantidad*0.1);
+        }
+        
         return total;
     } 
     

@@ -22,6 +22,10 @@ public class operacionesBasicas {
       return resultado;
     }
     
+    public int resta(int x, int y){ 
+        int resultado=x-y; return resultado;
+    }
+    
     public String concatenar(String x, String y){
         String resultado=x+y;
         return resultado;

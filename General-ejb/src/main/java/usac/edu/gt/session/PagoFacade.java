@@ -34,4 +34,8 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     public PagoFacade() {
         super(Pago.class);
     }
+    
+    public double RestaTotales(Pago pago1,Pago pago2){
+        return pago1.getTotal() - pago2.getTotal();
+    }
 }

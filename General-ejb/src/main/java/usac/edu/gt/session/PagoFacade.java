@@ -80,6 +80,8 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     
     @Override
     public double Pago(double recibido, Pago p) {
+        System.out.println("double recibido "+recibido);
+        System.out.println("Total "+p.getTotal());
         return recibido + Pago.getTotal();
     }
     

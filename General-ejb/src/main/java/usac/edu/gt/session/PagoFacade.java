@@ -40,4 +40,11 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
         double total=cantidad+(cantidad*0.1);
         return total;
     } 
+    
+    @Override
+    public double PagoIVA(double dato)
+    {
+        double iva = dato*0.12;
+        return iva;
+    }
 }

@@ -13,7 +13,8 @@ package usac.edu.gt.mgdbean;
 @RequestScoped
 public class registroProducto {
     private String nombreProducto;
-    
+    @EJB
+    Private registroProductoFacadeLocal registroProductoFacadeLocal;
     @PostConstructpr
     public void init(){
         nombreProducto="Producto";

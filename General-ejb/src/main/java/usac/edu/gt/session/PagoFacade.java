@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
 import usac.edu.gt.entity.Pago;
 import usac.edu.gt.session.local.PagoFacadeLocal;
-
+import usac.edu.gt.entity.Pago;
 /**
  *
  * @author romar
@@ -34,4 +34,10 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     public PagoFacade() {
         super(Pago.class);
     }
+    
+    @Override
+    public double calcularServicio(double cantidad){
+        double total=cantidad+(cantidad*0.1);
+        return total;
+    } 
 }

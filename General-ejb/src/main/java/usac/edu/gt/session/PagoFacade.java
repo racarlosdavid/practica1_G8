@@ -34,4 +34,9 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     public PagoFacade() {
         super(Pago.class);
     }
+    
+    @Override
+    public double Pago(double recibido, Pago p) {
+        return recibido + Pago.getTotal();
+    }
 }

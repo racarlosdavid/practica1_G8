@@ -42,4 +42,11 @@ public class operacionesBasicas {
 	return resultado;
     }
     
+    
+    public int potencia (int base, int exponente) {
+            int resultado = (int) Math.pow(base, exponente);
+            return resultado;
+    }
+
+    
 }

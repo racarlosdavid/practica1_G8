@@ -16,6 +16,12 @@ public class operacionesBasicas {
         return resultado;
     }
     
+    public int multiplica(int dato1, int dato2)
+    {
+      int resultado = dato1 * dato2;
+      return resultado;
+    }
+    
     public String concatenar(String x, String y){
         String resultado=x+y;
         return resultado;

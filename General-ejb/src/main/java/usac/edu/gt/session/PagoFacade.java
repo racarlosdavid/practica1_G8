@@ -71,8 +71,9 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
         System.out.println("Total: "+subtotal);
         return subtotal;
     }
-    public double restarCincoPorciento(double cantidad1,double cantidad2){
+    public double restarCincoPorciento(double cantidad1,double cantidad2, double cantidad3){
         double resultado = cantidad1 + cantidad2;
+        resultado = resultado + cantidad3;
         resultado = resultado - (resultado * 0.05);
         return resultado;
     }

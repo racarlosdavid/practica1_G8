@@ -52,6 +52,13 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     public double PagoIVA(double dato)
     {
         double iva = dato*0.12;
+        
+        double totalsiva = dato-iva;
+        
+        System.out.println("Precio: " + dato);
+        System.out.println("IVA: " + iva);
+        System.out.println("Total sin IVA:" + totalsiva);
+        
         return iva;
     }
     

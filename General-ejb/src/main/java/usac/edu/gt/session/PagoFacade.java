@@ -67,4 +67,8 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     public double Pago(double recibido, Pago p) {
         return recibido + Pago.getTotal();
     }
+    
+    public double RestaTotales(Pago pago1,Pago pago2){
+        return pago1.getTotal() - pago2.getTotal();
+    }
 }

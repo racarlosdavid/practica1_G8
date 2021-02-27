@@ -31,4 +31,15 @@ public class operacionesBasicas {
         return resultado;
     }
     
+    public int dividirEnteros(int numero1, int numero2){
+    	int resultado = 0;
+    	try {
+            resultado = numero1 / numero2;
+	}
+        catch(Exception e) {
+            System.out.println("Error al realizar la division");
+	}
+	return resultado;
+    }
+    
 }

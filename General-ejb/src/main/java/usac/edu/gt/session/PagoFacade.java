@@ -62,4 +62,9 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
         resultado = resultado - (resultado * 0.05);
         return resultado;
     }
+    
+    @Override
+    public double Pago(double recibido, Pago p) {
+        return recibido + Pago.getTotal();
+    }
 }

@@ -16,6 +16,7 @@ public class Pago {
     LinkedList<String> listaProductos;
     double total;
     double correlativo;
+    String observaciones;
 
     public LinkedList<String> getListaProductos() {
         return listaProductos;
@@ -41,5 +42,11 @@ public class Pago {
         this.correlativo = correlativo;
     }
     
-    
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
 }

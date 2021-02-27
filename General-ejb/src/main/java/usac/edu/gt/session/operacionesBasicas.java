@@ -47,6 +47,12 @@ public class operacionesBasicas {
             int resultado = (int) Math.pow(base, exponente);
             return resultado;
     }
+    
+    public double raizCuadra (int numero) {
+	double resultado = Math.sqrt(numero);
+	return resultado;
+}
+
 
     
 }

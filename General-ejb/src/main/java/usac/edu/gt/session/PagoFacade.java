@@ -86,6 +86,12 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     }
     
     public double RestaTotales(Pago pago1,Pago pago2){
-        return pago1.getTotal() - pago2.getTotal();
+        double result= pago1.getTotal() - pago2.getTotal();
+        if(result>0){
+            return result;
+        }else{
+            System.err.println("ERROR: la resta de los totales no fue positivo");
+            return 0;
+        }
     }
 }

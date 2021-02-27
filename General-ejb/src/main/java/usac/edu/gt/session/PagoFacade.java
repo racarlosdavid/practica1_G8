@@ -5,6 +5,7 @@
  */
 package usac.edu.gt.session;
 
+import java.util.List;
 import javax.annotation.Resource;
 import javax.ejb.EJBContext;
 import javax.ejb.Stateless;
@@ -33,5 +34,14 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
 
     public PagoFacade() {
         super(Pago.class);
+    }
+    
+    @Override
+    public double subtotales(List<Pago> lpago){
+        double subtotal =0;
+        for(Pago pag : lpago){
+            subtotal+=pag.getTotal();
+        }
+        return subtotal;
     }
 }

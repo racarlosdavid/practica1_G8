@@ -94,4 +94,13 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
             return 0;
         }
     }
+    
+    @Override
+    public void crearPago(PagoFacade pago) throws Exception {
+        UserTransaction userTransaction = ejbContext.getUserTransaction();
+         userTransaction.begin();
+        this.create(pago);
+        userTransaction.commit(); 
+
+    }
 }

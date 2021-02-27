@@ -34,4 +34,9 @@ public class PagoFacade extends AbstractFacade<Pago> implements PagoFacadeLocal{
     public PagoFacade() {
         super(Pago.class);
     }
+    public double restarCincoPorciento(double cantidad1,double cantidad2){
+        double resultado = cantidad1 + cantidad2;
+        resultado = resultado - (resultado * 0.05);
+        return resultado;
+    }
 }
